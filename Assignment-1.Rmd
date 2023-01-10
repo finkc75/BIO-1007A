@@ -1,0 +1,61 @@
+---
+title: "Assignment-1"
+author: "Chris Fink"
+date: "2023-01-10"
+output: html_document
+---
+
+# Notes
+
+Git and Github:  
+Version control  
+Being able to keep (restoring) and maintain past versions files  
+Initially for programmers collaborating  
+
+Files good for version control  
+Plain text (.txt)  
+R scripts (.r/.rmd)  
+Markdown (.md/.rmd)  
+Text formatting language  
+LaTex  
+Html (.html)  
+
+Files not good for version control through github  
+Pdf  
+Video  
+Jpeg  
+Media files  
+Word docs  
+
+Git = local computer  
+Github = free remote website for public storage of projects  
+Github repo  
+Clone to local computer  
+Changes to files  
+Adding new file  
+Alter existing file  
+Delete existing file  
+
+Commit (noun)  
+Snapshot of current file system  
+
+Commit (verb)  
+Saving / recording changes to local repository  
+
+Push  
+Transfer changes from local computer repo to github  
+
+Pull  
+Brings down the github repo to your computer  
+
+Commands  
+Git commit  
+Git add -A  
+Git commit am “message”  
+
+R project  
+Divides work into multiple contexts  
+Each project has their own working directory  
+Has its own workspace  
+History  
+Source documents  

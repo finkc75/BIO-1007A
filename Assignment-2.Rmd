@@ -35,9 +35,10 @@ It is really funny how *Josh* had problems with git today. Meanwhile, **I** had 
 
 1. item 1
 2. item 2
-3. item 3
+3. item 3  
 
-6. link to a website
+
+6 link to a website
 [Google](https://www.google.com)
 
 # Header Number as part 7

@@ -1,5 +1,5 @@
 ---
-title: "index"
+title: "BIO 1007A Web Page"
 author: "Chris Fink"
 date: "2023-01-10"
 output:

@@ -5,3 +5,50 @@ date: "2023-01-10"
 output: html_document
 ---
 
+
+1 image  
+![image link](https://imageio.forbes.com/specials-images/imageserve/55bb87e5e4b05c2c343250ac/0x0.jpg?format=jpg&crop=416,416,x0,y0,safe&height=87&width=87)  
+
+2 table  
+
+Table Header 1 | Table Header 2 | Table Header 3
+---------------|----------------|---------------
+Cell 1         |Cell 6          |Cell 11
+Cell 2         |Cell 7          |Cell 12
+Cell 3         |Cell 8          |Cell 13
+Cell 4         |Cell 9          |Cell 14
+Cell 5         |Cell 10         |Cell 15
+
+
+3 the bold and italics  
+
+It is really funny how *Josh* had problems with git today. Meanwhile, **I** had the same problems yesterday.
+
+4 bulleted list 
+
+* Note 1
+* Note 2
+  + Note 2a
+  + Note 2b
+
+5 numbered list  
+
+1. item 1
+2. item 2
+3. item 3
+
+6. link to a website
+[Google](https://www.google.com)
+
+# Header Number as part 7
+## Smaller Header
+### very small header
+
+8 Sub and Super scripts
+
+$x^{2}$ and $x_{a+b}$
+
+9 Equation  
+$E = MC^{2}$
+
+`10 this is the fencing of the plain text`

@@ -2,7 +2,10 @@
 title: "Weekly-Assignment-1"
 author: "Chris Fink"
 date: "2023-01-12"
-output: html_document
+output:
+  prettydoc::html_pretty:
+    theme: architect
+    highlight: github
 ---
 # Git must be downloaded to the computer before proceeding with these steps
 ## How to Set Up a Github Page in RStudio  

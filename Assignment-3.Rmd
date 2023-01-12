@@ -2,15 +2,31 @@
 title: "Assignment-3"
 author: "Chris Fink"
 date: "2023-01-12"
-output: html_document
+output:
+  prettydoc::html_pretty:
+    theme: architect
+    highlight: github
 ---
 
-1  
-x <- 1.1  
-a <- 2.2
-b <- 3.3  
+Question 1
 
-$x^{a^{{b}}}$  
-$(x^{a})^{b}$
-$3x^{3} + 2x^{2} + 1$
+```{r}
+x <- 1.1
+a <- 2.2
+b <- 3.3
+
+z <- x^{a^{b}}
+print(z)
+
+z <- ((x^{a})^{b})
+print(z)
+
+z <- (3*x^{3})+(2*x^{2}+1)
+print(z)
+```
+
+Question 2
+```{r}
+
+```
 

@@ -1,0 +1,23 @@
+---
+title: "Weekly-Assignment-1"
+author: "Chris Fink"
+date: "2023-01-12"
+output: html_document
+---
+# Git must be downloaded to the computer before proceeding with these steps
+## How to Set Up a Github Page in RStudio  
+
+1. In order to set up a Github page in RStudio, you will first need to create a new repository in your Guthub account.
+2. Once this is done, it is important to then copy the https link that Github produces for later use in RStudio.
+3. In the top right of Rstudio, there is button that reads new project and this is where you must go next.
+4. The next step is to select version control and then git after that.
+5. A new screen will pop up which will allow for you to insert the link that was copied from Github and, most importantly, you must name the project the same name as you did for the repository on Github.
+6. Once this is done, the computer and Github are now linked on that project.
+7. Now it is possible to start creating the webpage.
+8. First up is opening a new RMarkdown file and when saving it, naming it "index".
+9. Next up is making the actual changes to this page through RMarkdown and once that is complete, make sure to knit the page to html.
+Once it is ready to be sent to Github, then you must open up the terminal in RStudio.
+10. 
+
+
+## Troubleshooting  

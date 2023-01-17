@@ -25,9 +25,15 @@ output:
 8. First up is opening a new RMarkdown file and when saving it, naming it "index".
 9. Next up is making the actual changes to this page through RMarkdown and once that is complete, make sure to knit the page to html.
 Once it is ready to be sent to Github, then you must open up the terminal in RStudio.
-10. Go through the adding and committing steps to set up the push of the information to the 
+10. Go through the adding and committing steps to set up the push of the information to the Github.
 
 ## Troubleshooting and helpful links
+
+It is important to look to make sure that each of the commands are put into the terminal rather than in the console or elsewhere. If not then there may be confusion that follows.  
+
+If the installation of git has failed more then once, I would suggest redownloading xcode as it can help to reset the process. It did for me after I had failed repeatedly on the download.  
+
+When downloading git, if you did not use the apple website for downloading xcod and the developer tools needed for git, it will fail to download so using the wbesite below is imperative for the effective downloading of git.
 
 [apple website for downloading xcode](https://developer.apple.com)
 

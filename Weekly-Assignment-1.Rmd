@@ -7,7 +7,12 @@ output:
     theme: architect
     highlight: github
 ---
-# Git must be downloaded to the computer before proceeding with these steps
+# Git must be downloaded to the computer before proceeding with these steps  
+
+1. To download git, I found it necessary to download Xcode to my Mac. This can be done by going to the apple website listed below and downloading Xcode along with the tool set that will be used by homebrew.
+2. Once this is done, homebrew will then be used to install git to the computer by using the command listen on the website in the terminal of the computer.
+3. After the installation is completed, you will then run another command in the terminal that will finsih adapting git to the computer.
+
 ## How to Set Up a Github Page in RStudio  
 
 1. In order to set up a Github page in RStudio, you will first need to create a new repository in your Guthub account.
@@ -20,7 +25,9 @@ output:
 8. First up is opening a new RMarkdown file and when saving it, naming it "index".
 9. Next up is making the actual changes to this page through RMarkdown and once that is complete, make sure to knit the page to html.
 Once it is ready to be sent to Github, then you must open up the terminal in RStudio.
-10. 
+10. Go through the adding and committing steps to set up the push of the information to the 
 
+## Troubleshooting and helpful links
 
-## Troubleshooting  
+[apple website for downloading xcode](https://developer.apple.com)
+

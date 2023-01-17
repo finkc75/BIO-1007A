@@ -1,0 +1,57 @@
+---
+title: "Assignment-4"
+author: "Chris Fink"
+date: "2023-01-17"
+output:
+  prettydoc::html_pretty:
+    theme: architect
+    highlight: github
+---
+
+Question 1  
+
+```{r}
+n_dims <- floor(runif(1, min=3, max=10))
+print(n_dims)
+
+vecn_dims <- c(1:n_dims^2)
+
+
+sample(vecn_dims)
+
+m <- matrix(vecn_dims, n_dims, n_dims)
+print(m)
+
+t(m)
+print(t(m))
+## This function had managed to rotate the matrix so that the numbers go horizontally.
+
+## Sum and Mean of first row. 
+sum(m[1, ])
+
+mean(m[1,])
+
+
+## Sum and Mean of the last row
+sum(m[n_dims,])
+
+mean(m[n_dims,])
+
+```
+
+Question 2
+```{r}
+my_matrix <- matrix(runif(16), nrow=4)
+my_matrix
+
+my_num <- c(runif(100))
+my_logical <- c(my_num > 0.5)
+
+my_letters <- sample(letters)
+```
+
+Question 3
+```{r}
+
+```
+

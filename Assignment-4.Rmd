@@ -39,19 +39,4 @@ mean(m[n_dims,])
 
 ```
 
-Question 2
-```{r}
-my_matrix <- matrix(runif(16), nrow=4)
-my_matrix
-
-my_num <- c(runif(100))
-my_logical <- c(my_num > 0.5)
-
-my_letters <- sample(letters)
-```
-
-Question 3
-```{r}
-
-```
 

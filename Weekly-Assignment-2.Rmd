@@ -1,0 +1,7 @@
+---
+title: "Weekly-Assignment-2"
+author: "Chris Fink"
+date: "2023-01-19"
+output: html_document
+---
+

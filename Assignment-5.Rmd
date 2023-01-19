@@ -1,0 +1,58 @@
+---
+title: "Assignment-5"
+author: "Chris Fink"
+date: "2023-01-19"
+output:
+  prettydoc::html_pretty:
+    theme: architect
+    highlight: github
+---
+
+Question 1
+```{r}
+my_matrix <- matrix(runif(16), nrow=4)
+my_matrix
+
+my_num <- c(runif(100))
+my_logical <- c(my_num > 0.5)
+
+my_letters <- sample(letters)
+
+newlist <- list(my_matrix[2,2], my_logical[2], my_letters[2])
+typeof(newlist[[1]])
+typeof(newlist[[2]])
+typeof(newlist[[3]])
+
+newlistVec <- c(newlist[[1]], newlist[[2]], newlist[[3]])
+typeof(newlistVec)
+
+## the type of newlistVec is character
+```
+
+Question 2
+```{r}
+my_unif <- rep(NA, 26)
+my_letters <- rep(NA, 26)
+dFrame <- data.frame(my_unif, my_letters, stringAsFactors=F)
+dFrame
+
+dFrame[,1] <- runif(26, min=0, max=10)
+dFrame
+
+dFrame[,2] <- sample(LETTERS)
+dFrame
+
+dFrame[sample(nrow(dFrame), 4), 1] <- NA
+dFrame
+
+which(is.na(dFrame))
+
+
+
+mean(dFrame[,1], na.rm = TRUE)
+
+
+colnames(dFrame)[2] <- "my_LETTERS"
+dFrame[order(dFrame$my_LETTERS),]
+
+```

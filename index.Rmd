@@ -7,6 +7,11 @@ output:
     theme: architect
     highlight: github
 ---
+![](https://res.cloudinary.com/hud9ala09/image/upload/v1640022786/uzrrkn10npgodvtlh6hm.png)  
+
+## About This Page  
+
+I am Chris FInk and I would like to welcome you to my github page for the BIO 1007A Reproducible Biology in R class. I am a junior at Middlebury College pursuing a degree in Molcular Biology and Biochemistry. It is my hope that the webpage can accurately show my progression in learning this subject.
 
 ## Daily Assignments
 

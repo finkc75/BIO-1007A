@@ -163,11 +163,11 @@ code span.ot { color: #007020; }
 <p>Question 1</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>my_matrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">runif</span>(<span class="dv">16</span>), <span class="at">nrow=</span><span class="dv">4</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>my_matrix</span></code></pre></div>
-<pre><code>##            [,1]       [,2]      [,3]      [,4]
-## [1,] 0.09815656 0.55779933 0.8912498 0.4511882
-## [2,] 0.95626460 0.08607402 0.6132536 0.2669916
-## [3,] 0.08357358 0.05271922 0.3042637 0.8608606
-## [4,] 0.09370449 0.71939183 0.1011920 0.1619896</code></pre>
+<pre><code>##           [,1]       [,2]      [,3]       [,4]
+## [1,] 0.5809802 0.30919134 0.6010806 0.02459325
+## [2,] 0.4586983 0.03545117 0.5054193 0.84305728
+## [3,] 0.8246015 0.11376669 0.6035027 0.53551004
+## [4,] 0.1096000 0.14872535 0.8372619 0.31322387</code></pre>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>my_num <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">runif</span>(<span class="dv">100</span>))</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>my_logical <span class="ot">&lt;-</span> <span class="fu">c</span>(my_num <span class="sc">&gt;</span> <span class="fl">0.5</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -218,124 +218,124 @@ code span.ot { color: #007020; }
 ## 26      NA         NA           FALSE</code></pre>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>dFrame[,<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">26</span>, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">10</span>)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>dFrame</span></code></pre></div>
-<pre><code>##     my_unif my_letters stringAsFactors
-## 1  6.836163         NA           FALSE
-## 2  6.408207         NA           FALSE
-## 3  3.410088         NA           FALSE
-## 4  4.994406         NA           FALSE
-## 5  9.885633         NA           FALSE
-## 6  1.776297         NA           FALSE
-## 7  1.266660         NA           FALSE
-## 8  1.083753         NA           FALSE
-## 9  8.173220         NA           FALSE
-## 10 8.061444         NA           FALSE
-## 11 9.972363         NA           FALSE
-## 12 5.849062         NA           FALSE
-## 13 5.379483         NA           FALSE
-## 14 5.294180         NA           FALSE
-## 15 4.219865         NA           FALSE
-## 16 4.666319         NA           FALSE
-## 17 4.082740         NA           FALSE
-## 18 9.015658         NA           FALSE
-## 19 7.428749         NA           FALSE
-## 20 9.938638         NA           FALSE
-## 21 0.522556         NA           FALSE
-## 22 1.040385         NA           FALSE
-## 23 4.830868         NA           FALSE
-## 24 8.454588         NA           FALSE
-## 25 1.875243         NA           FALSE
-## 26 8.828272         NA           FALSE</code></pre>
+<pre><code>##       my_unif my_letters stringAsFactors
+## 1  3.28106269         NA           FALSE
+## 2  8.07402686         NA           FALSE
+## 3  0.06971728         NA           FALSE
+## 4  7.82021623         NA           FALSE
+## 5  5.61214016         NA           FALSE
+## 6  9.92333177         NA           FALSE
+## 7  8.23794359         NA           FALSE
+## 8  5.86087096         NA           FALSE
+## 9  6.39070944         NA           FALSE
+## 10 7.32884503         NA           FALSE
+## 11 2.24068461         NA           FALSE
+## 12 3.20403248         NA           FALSE
+## 13 5.56685974         NA           FALSE
+## 14 3.15604855         NA           FALSE
+## 15 6.26146921         NA           FALSE
+## 16 0.11956932         NA           FALSE
+## 17 5.87740585         NA           FALSE
+## 18 5.16324872         NA           FALSE
+## 19 9.14305646         NA           FALSE
+## 20 3.93165660         NA           FALSE
+## 21 5.96575334         NA           FALSE
+## 22 2.48197985         NA           FALSE
+## 23 8.24993663         NA           FALSE
+## 24 9.01764618         NA           FALSE
+## 25 3.12490665         NA           FALSE
+## 26 4.12864183         NA           FALSE</code></pre>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>dFrame[,<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="fu">sample</span>(LETTERS)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>dFrame</span></code></pre></div>
-<pre><code>##     my_unif my_letters stringAsFactors
-## 1  6.836163          R           FALSE
-## 2  6.408207          X           FALSE
-## 3  3.410088          U           FALSE
-## 4  4.994406          Y           FALSE
-## 5  9.885633          A           FALSE
-## 6  1.776297          B           FALSE
-## 7  1.266660          I           FALSE
-## 8  1.083753          D           FALSE
-## 9  8.173220          J           FALSE
-## 10 8.061444          S           FALSE
-## 11 9.972363          C           FALSE
-## 12 5.849062          F           FALSE
-## 13 5.379483          L           FALSE
-## 14 5.294180          O           FALSE
-## 15 4.219865          N           FALSE
-## 16 4.666319          M           FALSE
-## 17 4.082740          Q           FALSE
-## 18 9.015658          T           FALSE
-## 19 7.428749          Z           FALSE
-## 20 9.938638          V           FALSE
-## 21 0.522556          E           FALSE
-## 22 1.040385          H           FALSE
-## 23 4.830868          G           FALSE
-## 24 8.454588          K           FALSE
-## 25 1.875243          P           FALSE
-## 26 8.828272          W           FALSE</code></pre>
+<pre><code>##       my_unif my_letters stringAsFactors
+## 1  3.28106269          O           FALSE
+## 2  8.07402686          B           FALSE
+## 3  0.06971728          W           FALSE
+## 4  7.82021623          C           FALSE
+## 5  5.61214016          A           FALSE
+## 6  9.92333177          G           FALSE
+## 7  8.23794359          I           FALSE
+## 8  5.86087096          T           FALSE
+## 9  6.39070944          K           FALSE
+## 10 7.32884503          L           FALSE
+## 11 2.24068461          Z           FALSE
+## 12 3.20403248          R           FALSE
+## 13 5.56685974          S           FALSE
+## 14 3.15604855          Q           FALSE
+## 15 6.26146921          U           FALSE
+## 16 0.11956932          E           FALSE
+## 17 5.87740585          N           FALSE
+## 18 5.16324872          F           FALSE
+## 19 9.14305646          D           FALSE
+## 20 3.93165660          H           FALSE
+## 21 5.96575334          Y           FALSE
+## 22 2.48197985          V           FALSE
+## 23 8.24993663          P           FALSE
+## 24 9.01764618          X           FALSE
+## 25 3.12490665          J           FALSE
+## 26 4.12864183          M           FALSE</code></pre>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>dFrame[<span class="fu">sample</span>(<span class="fu">nrow</span>(dFrame), <span class="dv">4</span>), <span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>dFrame</span></code></pre></div>
-<pre><code>##     my_unif my_letters stringAsFactors
-## 1  6.836163          R           FALSE
-## 2  6.408207          X           FALSE
-## 3  3.410088          U           FALSE
-## 4        NA          Y           FALSE
-## 5  9.885633          A           FALSE
-## 6  1.776297          B           FALSE
-## 7  1.266660          I           FALSE
-## 8  1.083753          D           FALSE
-## 9  8.173220          J           FALSE
-## 10       NA          S           FALSE
-## 11 9.972363          C           FALSE
-## 12 5.849062          F           FALSE
-## 13 5.379483          L           FALSE
-## 14 5.294180          O           FALSE
-## 15 4.219865          N           FALSE
-## 16 4.666319          M           FALSE
-## 17 4.082740          Q           FALSE
-## 18       NA          T           FALSE
-## 19 7.428749          Z           FALSE
-## 20 9.938638          V           FALSE
-## 21       NA          E           FALSE
-## 22 1.040385          H           FALSE
-## 23 4.830868          G           FALSE
-## 24 8.454588          K           FALSE
-## 25 1.875243          P           FALSE
-## 26 8.828272          W           FALSE</code></pre>
+<pre><code>##       my_unif my_letters stringAsFactors
+## 1  3.28106269          O           FALSE
+## 2          NA          B           FALSE
+## 3  0.06971728          W           FALSE
+## 4  7.82021623          C           FALSE
+## 5  5.61214016          A           FALSE
+## 6  9.92333177          G           FALSE
+## 7  8.23794359          I           FALSE
+## 8  5.86087096          T           FALSE
+## 9  6.39070944          K           FALSE
+## 10 7.32884503          L           FALSE
+## 11 2.24068461          Z           FALSE
+## 12 3.20403248          R           FALSE
+## 13         NA          S           FALSE
+## 14 3.15604855          Q           FALSE
+## 15 6.26146921          U           FALSE
+## 16 0.11956932          E           FALSE
+## 17 5.87740585          N           FALSE
+## 18 5.16324872          F           FALSE
+## 19 9.14305646          D           FALSE
+## 20 3.93165660          H           FALSE
+## 21 5.96575334          Y           FALSE
+## 22 2.48197985          V           FALSE
+## 23         NA          P           FALSE
+## 24 9.01764618          X           FALSE
+## 25 3.12490665          J           FALSE
+## 26         NA          M           FALSE</code></pre>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(<span class="fu">is.na</span>(dFrame))</span></code></pre></div>
-<pre><code>## [1]  4 10 18 21</code></pre>
+<pre><code>## [1]  2 13 23 26</code></pre>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(dFrame[,<span class="dv">1</span>], <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<pre><code>## [1] 5.486399</code></pre>
+<pre><code>## [1] 5.191468</code></pre>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(dFrame)[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">&quot;my_LETTERS&quot;</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>dFrame[<span class="fu">order</span>(dFrame<span class="sc">$</span>my_LETTERS),]</span></code></pre></div>
-<pre><code>##     my_unif my_LETTERS stringAsFactors
-## 5  9.885633          A           FALSE
-## 6  1.776297          B           FALSE
-## 11 9.972363          C           FALSE
-## 8  1.083753          D           FALSE
-## 21       NA          E           FALSE
-## 12 5.849062          F           FALSE
-## 23 4.830868          G           FALSE
-## 22 1.040385          H           FALSE
-## 7  1.266660          I           FALSE
-## 9  8.173220          J           FALSE
-## 24 8.454588          K           FALSE
-## 13 5.379483          L           FALSE
-## 16 4.666319          M           FALSE
-## 15 4.219865          N           FALSE
-## 14 5.294180          O           FALSE
-## 25 1.875243          P           FALSE
-## 17 4.082740          Q           FALSE
-## 1  6.836163          R           FALSE
-## 10       NA          S           FALSE
-## 18       NA          T           FALSE
-## 3  3.410088          U           FALSE
-## 20 9.938638          V           FALSE
-## 26 8.828272          W           FALSE
-## 2  6.408207          X           FALSE
-## 4        NA          Y           FALSE
-## 19 7.428749          Z           FALSE</code></pre>
+<pre><code>##       my_unif my_LETTERS stringAsFactors
+## 5  5.61214016          A           FALSE
+## 2          NA          B           FALSE
+## 4  7.82021623          C           FALSE
+## 19 9.14305646          D           FALSE
+## 16 0.11956932          E           FALSE
+## 18 5.16324872          F           FALSE
+## 6  9.92333177          G           FALSE
+## 20 3.93165660          H           FALSE
+## 7  8.23794359          I           FALSE
+## 25 3.12490665          J           FALSE
+## 9  6.39070944          K           FALSE
+## 10 7.32884503          L           FALSE
+## 26         NA          M           FALSE
+## 17 5.87740585          N           FALSE
+## 1  3.28106269          O           FALSE
+## 23         NA          P           FALSE
+## 14 3.15604855          Q           FALSE
+## 12 3.20403248          R           FALSE
+## 13         NA          S           FALSE
+## 8  5.86087096          T           FALSE
+## 15 6.26146921          U           FALSE
+## 22 2.48197985          V           FALSE
+## 3  0.06971728          W           FALSE
+## 24 9.01764618          X           FALSE
+## 21 5.96575334          Y           FALSE
+## 11 2.24068461          Z           FALSE</code></pre>
     </section>
   </div>
 </div>

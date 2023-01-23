@@ -2,6 +2,41 @@
 title: "Weekly-Assignment-2"
 author: "Chris Fink"
 date: "2023-01-19"
-output: html_document
+output:
+  prettydoc::html_pretty:
+    theme: architect
+    highlight: github
 ---
+
+
+```{r}
+## Quesstion 1
+my_unif <- rep(NA, 26)
+my_letters <- rep(NA, 26)
+dFrame <- data.frame(my_unif, my_letters, stringAsFactors=F)
+dFrame
+
+myFunc <- function(mean1=10, mean2=45){
+  Dframe <- data.frame(Type = rep(NA, 50), Value = rep(NA, 50))
+  Dframe[1:25, 1] <- "Control"
+  Dframe[26:50, 1] <- "Treatment"
+  Dframe[1:25, 2] <- rnorm(n=25, mean = mean1, sd = 1.5)
+  Dframe[26:50, 2] <- rnorm(n = 25, mean =mean2, sd = 2)
+  return(Dframe)
+}
+
+## Question 2
+Df <- myFunc()
+head(Df)
+
+## Question 3
+analysis <- aov(Value ~ Type, data = Df)
+summary(analysis)
+
+## Question 4
+pVal <- function(Dframe = NULL){
+  anova <- aov(as.formula(paste(names(Dframe)[2], "~", names(Dframe)[1])), data = Dframe)
+  return(summary(anova)[[1]][[1, "Pr(>F)"]])
+}
+```
 

@@ -213,7 +213,23 @@ code span.ot { color: #007020; }
 ## 1             6.698214            3.041071          56</code></pre>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 7</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>grouped <span class="ot">&lt;-</span> <span class="fu">group_by</span>(iris4, Species)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>iris5 <span class="ot">&lt;-</span> <span class="fu">summarise</span>(grouped, <span class="at">Average.Sepal.Length =</span> <span class="fu">mean</span>(Sepal.Length), <span class="at">Average.Sepal.Width =</span> <span class="fu">mean</span>(Sepal.Width), <span class="at">TotalNumber =</span> <span class="fu">n</span>())</span></code></pre></div>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>iris5 <span class="ot">&lt;-</span> <span class="fu">summarise</span>(grouped, <span class="at">Average.Sepal.Length =</span> <span class="fu">mean</span>(Sepal.Length), <span class="at">Average.Sepal.Width =</span> <span class="fu">mean</span>(Sepal.Width), <span class="at">TotalNumber =</span> <span class="fu">n</span>())</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(iris5)</span></code></pre></div>
+<pre><code>## # A tibble: 2 × 4
+##   Species    Average.Sepal.Length Average.Sepal.Width TotalNumber
+##   &lt;fct&gt;                     &lt;dbl&gt;               &lt;dbl&gt;       &lt;int&gt;
+## 1 versicolor                 6.48                2.99          17
+## 2 virginica                  6.79                3.06          39</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 8</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>irisFinal <span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Species <span class="sc">==</span> <span class="st">&quot;virginica&quot;</span> <span class="sc">|</span> Species <span class="sc">==</span> <span class="st">&quot;versicolor&quot;</span>, Sepal.Length <span class="sc">&gt;</span> <span class="dv">6</span> <span class="sc">&amp;</span> Sepal.Width <span class="sc">&gt;</span> <span class="fl">2.5</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Species, Sepal.Length, Sepal.Width) <span class="sc">%&gt;%</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="at">by =</span> <span class="fu">desc</span>(Sepal.Length)) <span class="sc">%&gt;%</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Sepal_Area =</span> Sepal.Length <span class="sc">*</span> Sepal.Width) <span class="sc">%&gt;%</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Average.Sepal.Length =</span> <span class="fu">mean</span>(Sepal.Length), <span class="at">Average.Sepal.Width =</span> <span class="fu">mean</span>(Sepal.Width), <span class="at">TotalNumber =</span> <span class="fu">n</span>())</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(irisFinal)</span></code></pre></div>
+<pre><code>##   Average.Sepal.Length Average.Sepal.Width TotalNumber
+## 1             6.698214            3.041071          56</code></pre>
     </section>
   </div>
 </div>

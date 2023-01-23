@@ -12,6 +12,7 @@ R Chunk For The Assignment
 ```{r}
 
 library(tidyverse)
+
 # Question 1
 glimpse(iris)
 
@@ -43,4 +44,14 @@ print(irisTab)
 # Question 7
 grouped <- group_by(iris4, Species)
 iris5 <- summarise(grouped, Average.Sepal.Length = mean(Sepal.Length), Average.Sepal.Width = mean(Sepal.Width), TotalNumber = n())
+print(iris5)
+
+# Question 8
+irisFinal <- iris %>%
+  filter(Species == "virginica" | Species == "versicolor", Sepal.Length > 6 & Sepal.Width > 2.5) %>%
+  select(Species, Sepal.Length, Sepal.Width) %>%
+  arrange(by = desc(Sepal.Length)) %>%
+  mutate(Sepal_Area = Sepal.Length * Sepal.Width) %>%
+  summarise(Average.Sepal.Length = mean(Sepal.Length), Average.Sepal.Width = mean(Sepal.Width), TotalNumber = n())
+print(irisFinal)
 ```

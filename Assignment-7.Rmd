@@ -1,0 +1,71 @@
+---
+title: "Assignment-7"
+author: "Chris Fink"
+date: "2023-01-24"
+output:
+  prettydoc::html_pretty:
+    theme: architect
+    highlight: github
+---
+
+R Script for This Assignment
+```{r}
+# Question 1
+library(tidyverse)
+library(ggplot2)
+library(ggthemes)
+library(patchwork)
+
+glimpse(starwars)
+sw <- select(starwars, 1:11)
+
+
+swSpec <- starwars %>%
+  group_by(species) %>%
+  summarize(TotalNumber = n()) %>%
+  filter(TotalNumber > 1)
+
+
+# Question 2
+starwarsClean <- sw[complete.cases(starwars[,2]),]
+anyNA(starwarsClean[,2])
+
+
+
+swSum <- starwarsClean %>%
+  group_by(species) %>%
+  summarize(mean = mean(height), median = median(height), standard_deviation = sd(height), TotalNumber = n()) %>%
+  filter(TotalNumber > 1)
+
+  print(swSum)
+
+# Question 3
+  
+swclean <- starwarsClean %>% 
+  group_by(species) %>% 
+  mutate(specnum = n()) %>% 
+  filter(specnum > 1) %>% 
+  select(1:11)
+
+p1 <- ggplot(data=swclean, mapping=aes(x=species, y=height, fill = species)) + 
+  geom_boxplot() +
+  xlab("Species") + 
+  ylab("Height (cm)") + 
+  annotate("text", x = 8.5, y = 240, label = "p=1.2E-0.5")
+
+
+p1 + theme_minimal(base_size=8, base_family="serif")
+
+## All of the values from our summary lineup with the box plot except the mean for droid seems to be a little off from out calculated mean in the summary.
+
+# Question 4
+
+p2 <- ggplot(data=swclean, mapping=aes(x=mass, y=height, color = species)) + 
+  geom_point(na.rm = T) + 
+  geom_smooth(method = "lm", se = FALSE)
+
+p2 + theme_minimal(base_size=8, base_family="serif")
+
+p1 / p2
+```
+

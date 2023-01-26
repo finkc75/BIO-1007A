@@ -12,9 +12,9 @@
 
 <meta name="author" content="Chris Fink" />
 
-<meta name="date" content="2023-01-23" />
+<meta name="date" content="2023-01-26" />
 
-<title>Assignment-6</title>
+<title>Assignment-8</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -149,9 +149,9 @@ code span.ot { color: #007020; }
 
 <header>
 <div class="inner">
-<h1 class="title toc-ignore">Assignment-6</h1>
+<h1 class="title toc-ignore">Assignment-8</h1>
 <h3 class="author">Chris Fink</h3>
-<h3 class="date">2023-01-23</h3>
+<h3 class="date">2023-01-26</h3>
 </div>
 </header>
 
@@ -160,8 +160,40 @@ code span.ot { color: #007020; }
 <div id="content-wrapper">
   <div class="inner clearfix">
     <section id="main-content">
-<p>R Chunk For The Assignment</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div id="question-1-reflection" class="section level2">
+<h2>Question 1: Reflection</h2>
+<div id="assignment-6" class="section level3">
+<h3>Assignment 6</h3>
+<p>I noticed that I did not set the line data(iris) before I decided to
+head the iris data set.</p>
+<p>In the creation of iris1, we did not use %in% but were still able to
+assign it effectively. I also forgot to add glimpse(iris1) into the code
+as it was shown in the answers.</p>
+<p>I completed the creation of iris2, iris3, iris4, and irisTab the same
+way as the answer key. The only thing different about irisTab when
+comparing my code to the answer key was the names of the local
+variables.</p>
+<p>The creation of iris5 in my code was almost identical to the answer
+key’s but mine did not make use of the temporary variable ‘.’ where my
+code used’grouped’.</p>
+<p>And then our creation of irisFinal was very similar but we had
+neglected to arrange the data with average sepal area.</p>
+</div>
+<div id="weekly-assignment-2" class="section level3">
+<h3>Weekly Assignment 2</h3>
+<p>Upon changing the mean1 and mean2 values down in the evaluation of
+pVal() on myFunc(), it is seen that the function is viable and works as
+intended.</p>
+<p>I also noticed for question 4 that the posted answers had completed
+this step in a much more efficient way. From what we were able to look
+up online, we created a line of code that is lengthy and
+unnecessary.</p>
+</div>
+</div>
+<div id="question-2" class="section level2">
+<h2>Question 2</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Set up libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 <pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
 ## ✔ ggplot2 3.4.0      ✔ purrr   1.0.1 
 ## ✔ tibble  3.1.8      ✔ dplyr   1.0.10
@@ -170,79 +202,62 @@ code span.ot { color: #007020; }
 ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 1</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(iris)</span></code></pre></div>
-<pre><code>## Rows: 150
-## Columns: 5
-## $ Sepal.Length &lt;dbl&gt; 5.1, 4.9, 4.7, 4.6, 5.0, 5.4, 4.6, 5.0, 4.4, 4.9, 5.4, 4.…
-## $ Sepal.Width  &lt;dbl&gt; 3.5, 3.0, 3.2, 3.1, 3.6, 3.9, 3.4, 3.4, 2.9, 3.1, 3.7, 3.…
-## $ Petal.Length &lt;dbl&gt; 1.4, 1.4, 1.3, 1.5, 1.4, 1.7, 1.4, 1.5, 1.4, 1.5, 1.5, 1.…
-## $ Petal.Width  &lt;dbl&gt; 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.3, 0.2, 0.2, 0.1, 0.2, 0.…
-## $ Species      &lt;fct&gt; setosa, setosa, setosa, setosa, setosa, setosa, setosa, s…</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">### There are 150 observations and 5 variables in this data set.</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 2</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>iris1 <span class="ot">&lt;-</span> <span class="fu">filter</span>(iris, Species <span class="sc">==</span> <span class="st">&quot;virginica&quot;</span> <span class="sc">|</span> Species <span class="sc">==</span> <span class="st">&quot;versicolor&quot;</span>, Sepal.Length <span class="sc">&gt;</span> <span class="dv">6</span> <span class="sc">&amp;</span> Sepal.Width <span class="sc">&gt;</span> <span class="fl">2.5</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(iris1)</span></code></pre></div>
-<pre><code>## Rows: 56
-## Columns: 5
-## $ Sepal.Length &lt;dbl&gt; 7.0, 6.4, 6.9, 6.5, 6.3, 6.6, 6.1, 6.7, 6.1, 6.1, 6.4, 6.…
-## $ Sepal.Width  &lt;dbl&gt; 3.2, 3.2, 3.1, 2.8, 3.3, 2.9, 2.9, 3.1, 2.8, 2.8, 2.9, 3.…
-## $ Petal.Length &lt;dbl&gt; 4.7, 4.5, 4.9, 4.6, 4.7, 4.6, 4.7, 4.4, 4.0, 4.7, 4.3, 4.…
-## $ Petal.Width  &lt;dbl&gt; 1.4, 1.5, 1.5, 1.5, 1.6, 1.3, 1.4, 1.4, 1.3, 1.2, 1.3, 1.…
-## $ Species      &lt;fct&gt; versicolor, versicolor, versicolor, versicolor, versicolo…</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">### There are 56 observation and 5 variables in this data set.</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 3</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>iris2 <span class="ot">&lt;-</span> <span class="fu">select</span>(iris1, Species, Sepal.Length, Sepal.Width)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(iris2)</span></code></pre></div>
-<pre><code>## Rows: 56
-## Columns: 3
-## $ Species      &lt;fct&gt; versicolor, versicolor, versicolor, versicolor, versicolo…
-## $ Sepal.Length &lt;dbl&gt; 7.0, 6.4, 6.9, 6.5, 6.3, 6.6, 6.1, 6.7, 6.1, 6.1, 6.4, 6.…
-## $ Sepal.Width  &lt;dbl&gt; 3.2, 3.2, 3.1, 2.8, 3.3, 2.9, 2.9, 3.1, 2.8, 2.8, 2.9, 3.…</code></pre>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="do">### There are 56 observations and 3 variables in this data set.</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 4</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>iris3 <span class="ot">&lt;-</span> <span class="fu">arrange</span>(iris2, <span class="at">by =</span> <span class="fu">desc</span>(Sepal.Length))</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris3)</span></code></pre></div>
-<pre><code>##     Species Sepal.Length Sepal.Width
-## 1 virginica          7.9         3.8
-## 2 virginica          7.7         3.8
-## 3 virginica          7.7         2.6
-## 4 virginica          7.7         2.8
-## 5 virginica          7.7         3.0
-## 6 virginica          7.6         3.0</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 5</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>iris4 <span class="ot">&lt;-</span> <span class="fu">mutate</span>(iris3, <span class="at">Sepal_Area =</span> Sepal.Length <span class="sc">*</span> Sepal.Width)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># There are 56 observations and 4 variables in this data set.</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 6</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>irisTab <span class="ot">&lt;-</span> <span class="fu">summarize</span>(iris4, <span class="at">Average.Sepal.Length =</span> <span class="fu">mean</span>(Sepal.Length), <span class="at">Average.Sepal.Width =</span> <span class="fu">mean</span>(Sepal.Width), <span class="at">TotalNumber =</span> <span class="fu">n</span>())</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(irisTab)</span></code></pre></div>
-<pre><code>##   Average.Sepal.Length Average.Sepal.Width TotalNumber
-## 1             6.698214            3.041071          56</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 7</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>grouped <span class="ot">&lt;-</span> <span class="fu">group_by</span>(iris4, Species)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>iris5 <span class="ot">&lt;-</span> <span class="fu">summarise</span>(grouped, <span class="at">Average.Sepal.Length =</span> <span class="fu">mean</span>(Sepal.Length), <span class="at">Average.Sepal.Width =</span> <span class="fu">mean</span>(Sepal.Width), <span class="at">TotalNumber =</span> <span class="fu">n</span>())</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(iris5)</span></code></pre></div>
-<pre><code>## # A tibble: 2 × 4
-##   Species    Average.Sepal.Length Average.Sepal.Width TotalNumber
-##   &lt;fct&gt;                     &lt;dbl&gt;               &lt;dbl&gt;       &lt;int&gt;
-## 1 versicolor                 6.48                2.99          17
-## 2 virginica                  6.79                3.06          39</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 8</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>irisFinal <span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Species <span class="sc">==</span> <span class="st">&quot;virginica&quot;</span> <span class="sc">|</span> Species <span class="sc">==</span> <span class="st">&quot;versicolor&quot;</span>, Sepal.Length <span class="sc">&gt;</span> <span class="dv">6</span> <span class="sc">&amp;</span> Sepal.Width <span class="sc">&gt;</span> <span class="fl">2.5</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Species, Sepal.Length, Sepal.Width) <span class="sc">%&gt;%</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="at">by =</span> <span class="fu">desc</span>(Sepal.Length)) <span class="sc">%&gt;%</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Sepal_Area =</span> Sepal.Length <span class="sc">*</span> Sepal.Width) <span class="sc">%&gt;%</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Average.Sepal.Length =</span> <span class="fu">mean</span>(Sepal.Length), <span class="at">Average.Sepal.Width =</span> <span class="fu">mean</span>(Sepal.Width), <span class="at">TotalNumber =</span> <span class="fu">n</span>())</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(irisFinal)</span></code></pre></div>
-<pre><code>##   Average.Sepal.Length Average.Sepal.Width TotalNumber
-## 1             6.698214            3.041071          56</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Data obtained from Veysey Powell and Babbitt 2016: An experimental test of buffer utility as a technique for managing pool-breeding amphibians https://datadryad.org/stash/dataset/doi:10.5061%2Fdryad.547rp</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>dryadData <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">&quot;Data/veysey-powell-and-babbitt_data_buffers-and-amphibians2.csv&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">&quot;,&quot;</span>, <span class="at">stringsAsFactors =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># glimpse(dryadData)</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># head(dryadData)</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># table(dryadData$species)</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>dryadData<span class="sc">$</span>species<span class="ot">&lt;-</span><span class="fu">factor</span>(dryadData<span class="sc">$</span>species, <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;Spotted Salamander&quot;</span>, <span class="st">&quot;Wood Frog&quot;</span>)) <span class="co">#creating &#39;labels&#39; to use for the plot</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># this crestes readable and more descriptive labels for </span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># titles of the two species we are analyzing</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">#class(dryadData$treatment)</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>dryadData<span class="sc">$</span>treatment <span class="ot">&lt;-</span> <span class="fu">factor</span>(dryadData<span class="sc">$</span>treatment, </span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>            <span class="at">levels=</span><span class="fu">c</span>(<span class="st">&quot;Reference&quot;</span>,</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;100m&quot;</span>, <span class="st">&quot;30m&quot;</span>)) <span class="co"># This code here sets the </span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co"># x axis labels to begin with reference from 30m to 100m, </span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co"># once it is passed this threshold, it no longer uses &#39;ref&#39;</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>p<span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data=</span>dryadData, </span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">interaction</span>(wetland, treatment), <span class="co"># groups the data by these titles</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>           <span class="at">y=</span>count.total.adults, <span class="at">fill=</span><span class="fu">factor</span>(year))) <span class="sc">+</span> </span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>  <span class="co"># fill=factor(year) makes each of the bars for each year</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>  <span class="co"># appear as a different color</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  <span class="co"># factor takes the data and groups the data together by group</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position=</span><span class="st">&quot;dodge&quot;</span>, <span class="at">stat=</span><span class="st">&quot;identity&quot;</span>, <span class="at">color=</span><span class="st">&quot;black&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>  <span class="co"># geom_bar sets this figure to be a bar graph</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># position =&quot;dodge&quot; allows for the bars to be next to each other</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Number of breeding adults&quot;</span>) <span class="sc">+</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>  <span class="co"># this formats the y-axis title</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="sc">+</span> <span class="co"># this re-formats the x-axis title to have no name</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">100</span>,<span class="dv">200</span>,<span class="dv">300</span>,<span class="dv">400</span>,<span class="dv">500</span>)) <span class="sc">+</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>  <span class="co"># the scale_y_continuous section describes the y axis labels</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;30 (Ref)&quot;</span>, <span class="st">&quot;124 (Ref)&quot;</span>, <span class="st">&quot;141 (Ref)&quot;</span>, <span class="st">&quot;25 (100m)&quot;</span>,<span class="st">&quot;39 (100m)&quot;</span>,<span class="st">&quot;55 (100m)&quot;</span>,<span class="st">&quot;129 (100m)&quot;</span>, <span class="st">&quot;7 (30m)&quot;</span>,<span class="st">&quot;19 (30m)&quot;</span>,<span class="st">&quot;20 (30m)&quot;</span>,<span class="st">&quot;59 (30m)&quot;</span>)) <span class="sc">+</span> </span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>  <span class="co"># the scale_x_discrete section describes the x axis labels</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species, <span class="at">nrow=</span><span class="dv">2</span>, <span class="at">strip.position=</span><span class="st">&quot;right&quot;</span>) <span class="sc">+</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>  <span class="co"># puts a label for each graph while also positioning the </span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>  <span class="co"># graphs and labels in order to be read easier</span></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_few</span>() <span class="sc">+</span> <span class="fu">scale_fill_grey</span>() <span class="sc">+</span> </span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>  <span class="co">#the theme line updates the wanted theme for the total graph</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">&#39;gray94&#39;</span>, <span class="at">color =</span> <span class="st">&#39;black&#39;</span>), <span class="at">legend.position=</span><span class="st">&quot;top&quot;</span>,  <span class="at">legend.title=</span> <span class="fu">element_blank</span>(), <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>, <span class="at">face=</span><span class="st">&quot;bold&quot;</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>), <span class="at">strip.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">face=</span><span class="st">&quot;bold&quot;</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>)) <span class="sc">+</span> </span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>  <span class="co"># all of these lines adjust the theme and bars for inside</span></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>  <span class="co"># of the two distinct graphs</span></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>  <span class="co"># panel.background section sets the background color</span></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>  <span class="co"># the axis title portions set the font for the axis titles</span></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>  <span class="co"># element_blank() allows for there to be no title</span></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill=</span><span class="fu">guide_legend</span>(<span class="at">nrow=</span><span class="dv">1</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>)) </span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a><span class="co"># guides sets the parameters for the legend at the </span></span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a><span class="co"># top of the graph that illustrates the color of the </span></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a><span class="co"># bars as it corresponds to the years</span></span></code></pre></div>
+</div>
     </section>
   </div>
 </div>

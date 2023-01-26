@@ -38,5 +38,17 @@ pVal <- function(Dframe = NULL){
   anova <- aov(as.formula(paste(names(Dframe)[2], "~", names(Dframe)[1])), data = Dframe)
   return(summary(anova)[[1]][[1, "Pr(>F)"]])
 }
+
+pVal(myFunc(mean1 = 14, mean2 = 73))
+
+## Upon changing the mean1 and mean2 values down in the evaluation of ...
+## pVal() on myFunc(), it is seen that the function ...
+## is viable and works as intended.  
+
+
+## I also noticed for question 4 that the posted answers ...
+## Had completed this step in a much more efficient way. 
+## From what we were able to look up online, 
+## we created a line of code that is lengthy and unnecessary. 
 ```
 

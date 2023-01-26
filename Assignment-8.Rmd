@@ -1,0 +1,94 @@
+---
+title: "Assignment-8"
+author: "Chris Fink"
+date: "2023-01-26"
+output:
+  prettydoc::html_pretty:
+    theme: architect
+    highlight: github
+---
+
+## Question 1: Reflection
+
+
+### Assignment 6
+
+I noticed that I did not set the line data(iris) before I decided to head the iris data set. 
+
+In the creation of iris1, we did not use %in% but were still able to assign it effectively. I also forgot to add glimpse(iris1) into the code as it was shown in the answers.  
+
+I completed the creation of iris2, iris3, iris4, and irisTab the same way as the answer key. The only thing different about irisTab when comparing my code to the answer key was the names of the local variables.
+
+The creation of iris5 in my code was almost identical to the answer key's but mine did not make use of the temporary variable '.' where my code used'grouped'.
+
+And then our creation of irisFinal was very similar but we had neglected to arrange the data with average sepal area.
+
+### Weekly Assignment 2  
+
+Upon changing the mean1 and mean2 values down in the evaluation of pVal() on myFunc(), it is seen that the function is viable and works as intended.  
+
+I also noticed for question 4 that the posted answers had completed this step in a much more efficient way. From what we were able to look up online, we created a line of code that is lengthy and unnecessary. 
+
+
+## Question 2
+
+```{r}
+## Set up libraries
+library(tidyverse)
+library(ggthemes)
+
+
+# Data obtained from Veysey Powell and Babbitt 2016: An experimental test of buffer utility as a technique for managing pool-breeding amphibians https://datadryad.org/stash/dataset/doi:10.5061%2Fdryad.547rp
+
+dryadData <- read.table("Data/veysey-powell-and-babbitt_data_buffers-and-amphibians2.csv", header=TRUE, sep=",", stringsAsFactors = TRUE)
+
+# glimpse(dryadData)
+# head(dryadData)
+# table(dryadData$species)
+
+dryadData$species<-factor(dryadData$species, labels=c("Spotted Salamander", "Wood Frog")) #creating 'labels' to use for the plot
+# this crestes readable and more descriptive labels for 
+# titles of the two species we are analyzing
+
+#class(dryadData$treatment)
+dryadData$treatment <- factor(dryadData$treatment, 
+            levels=c("Reference",
+                     "100m", "30m")) # This code here sets the 
+# x axis labels to begin with reference from 30m to 100m, 
+# once it is passed this threshold, it no longer uses 'ref'
+
+
+
+p<- ggplot(data=dryadData, 
+       aes(x=interaction(wetland, treatment), # groups the data by these titles
+           y=count.total.adults, fill=factor(year))) + 
+  # fill=factor(year) makes each of the bars for each year
+  # appear as a different color
+  # factor takes the data and groups the data together by group
+  geom_bar(position="dodge", stat="identity", color="black") + 
+  # geom_bar sets this figure to be a bar graph
+  # position ="dodge" allows for the bars to be next to each other
+  ylab("Number of breeding adults") +
+  # this formats the y-axis title
+  xlab("") + # this re-formats the x-axis title to have no name
+  scale_y_continuous(breaks = c(0,100,200,300,400,500)) +
+  # the scale_y_continuous section describes the y axis labels
+  scale_x_discrete(labels=c("30 (Ref)", "124 (Ref)", "141 (Ref)", "25 (100m)","39 (100m)","55 (100m)","129 (100m)", "7 (30m)","19 (30m)","20 (30m)","59 (30m)")) + 
+  # the scale_x_discrete section describes the x axis labels
+  facet_wrap(~species, nrow=2, strip.position="right") +
+  # puts a label for each graph while also positioning the 
+  # graphs and labels in order to be read easier
+  theme_few() + scale_fill_grey() + 
+  #the theme line updates the wanted theme for the total graph
+  theme(panel.background = element_rect(fill = 'gray94', color = 'black'), legend.position="top",  legend.title= element_blank(), axis.title.y = element_text(size=12, face="bold", colour = "black"), strip.text.y = element_text(size = 10, face="bold", colour = "black")) + 
+  # all of these lines adjust the theme and bars for inside
+  # of the two distinct graphs
+  # panel.background section sets the background color
+  # the axis title portions set the font for the axis titles
+  # element_blank() allows for there to be no title
+  guides(fill=guide_legend(nrow=1,byrow=TRUE)) 
+# guides sets the parameters for the legend at the 
+# top of the graph that illustrates the color of the 
+# bars as it corresponds to the years
+```
+

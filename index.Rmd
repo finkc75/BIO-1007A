@@ -29,8 +29,12 @@ I am Chris FInk and I would like to welcome you to my github page for the BIO 10
 
 [Assignment 7](Assignment-7.html)
 
+[Assignment-8](Assignment-8.html)
+
 ## Weekly Assignments  
 
 [Weekly Assignment 1](Weekly-Assignment-1.html)
 
 [Weekly Assignment 2](Weekly-Assignment-2.html)
+
+[Weekly Assignment 3](Weekly-Assignment-3.html)

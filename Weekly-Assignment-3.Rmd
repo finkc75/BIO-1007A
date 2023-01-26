@@ -1,0 +1,9 @@
+---
+title: "Weekly-Assignment-3"
+author: "Chris Fink"
+date: "2023-01-26"
+output:
+  prettydoc::html_pretty:
+    theme: architect
+    highlight: github
+---

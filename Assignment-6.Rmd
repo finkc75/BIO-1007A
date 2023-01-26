@@ -14,18 +14,19 @@ R Chunk For The Assignment
 library(tidyverse)
 
 # Question 1
+data(iris)
 glimpse(iris)
 
 ### There are 150 observations and 5 variables in this data set.
 
 # Question 2
 iris1 <- filter(iris, Species == "virginica" | Species == "versicolor", Sepal.Length > 6 & Sepal.Width > 2.5)
-
+glimpse(iris1)
 ### There are 56 observation and 5 variables in this data set.
 
 # Question 3
 iris2 <- select(iris1, Species, Sepal.Length, Sepal.Width)
-
+glimpse(iris2)
 ### There are 56 observations and 3 variables in this data set.
 
 # Question 4

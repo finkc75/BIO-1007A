@@ -205,25 +205,37 @@ code span.ot { color: #007020; }
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>Df <span class="ot">&lt;-</span> <span class="fu">myFunc</span>()</span>
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(Df)</span></code></pre></div>
 <pre><code>##      Type     Value
-## 1 Control  9.386534
-## 2 Control  8.585298
-## 3 Control  9.880454
-## 4 Control 11.374534
-## 5 Control  9.481346
-## 6 Control  7.647940</code></pre>
+## 1 Control 10.797717
+## 2 Control  9.059892
+## 3 Control 10.930132
+## 4 Control  9.930911
+## 5 Control 10.769821
+## 6 Control 10.894417</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Question 3</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>analysis <span class="ot">&lt;-</span> <span class="fu">aov</span>(Value <span class="sc">~</span> Type, <span class="at">data =</span> Df)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(analysis)</span></code></pre></div>
 <pre><code>##             Df Sum Sq Mean Sq F value Pr(&gt;F)    
-## Type         1  15501   15501    4233 &lt;2e-16 ***
-## Residuals   48    176       4                   
+## Type         1  15292   15292    4803 &lt;2e-16 ***
+## Residuals   48    153       3                   
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Question 4</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>pVal <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">Dframe =</span> <span class="cn">NULL</span>){</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  anova <span class="ot">&lt;-</span> <span class="fu">aov</span>(<span class="fu">as.formula</span>(<span class="fu">paste</span>(<span class="fu">names</span>(Dframe)[<span class="dv">2</span>], <span class="st">&quot;~&quot;</span>, <span class="fu">names</span>(Dframe)[<span class="dv">1</span>])), <span class="at">data =</span> Dframe)</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">summary</span>(anova)[[<span class="dv">1</span>]][[<span class="dv">1</span>, <span class="st">&quot;Pr(&gt;F)&quot;</span>]])</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">pVal</span>(<span class="fu">myFunc</span>(<span class="at">mean1 =</span> <span class="dv">14</span>, <span class="at">mean2 =</span> <span class="dv">73</span>))</span></code></pre></div>
+<pre><code>## [1] 5.436806e-59</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Upon changing the mean1 and mean2 values down in the evaluation of ...</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="do">## pVal() on myFunc(), it is seen that the function ...</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="do">## is viable and works as intended.  </span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="do">## I also noticed for question 4 that the posted answers ...</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Had completed this step in a much more efficient way. </span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="do">## From what we were able to look up online, </span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="do">## we created a line of code that is lengthy and unnecessary. </span></span></code></pre></div>
     </section>
   </div>
 </div>

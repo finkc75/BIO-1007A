@@ -12,9 +12,9 @@
 
 <meta name="author" content="Chris Fink" />
 
-<meta name="date" content="2023-01-23" />
+<meta name="date" content="2023-01-26" />
 
-<title>Assignment-6</title>
+<title>Weekly-Assignment-3</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -31,97 +31,6 @@ document.addEventListener('DOMContentLoaded', function(e) {
 </script>
 
 
-<style type="text/css">code{white-space: pre;}</style>
-<style type="text/css" data-origin="pandoc">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-{ counter-reset: source-line 0; }
-pre.numberSource code > span
-{ position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-{ content: counter(source-line);
-position: relative; left: -1em; text-align: right; vertical-align: baseline;
-border: none; display: inline-block;
--webkit-touch-callout: none; -webkit-user-select: none;
--khtml-user-select: none; -moz-user-select: none;
--ms-user-select: none; user-select: none;
-padding: 0 4px; width: 4em;
-color: #aaaaaa;
-}
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
-div.sourceCode
-{ }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } 
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
-code span.at { color: #7d9029; } 
-code span.bn { color: #40a070; } 
-code span.bu { color: #008000; } 
-code span.cf { color: #007020; font-weight: bold; } 
-code span.ch { color: #4070a0; } 
-code span.cn { color: #880000; } 
-code span.co { color: #60a0b0; font-style: italic; } 
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
-code span.do { color: #ba2121; font-style: italic; } 
-code span.dt { color: #902000; } 
-code span.dv { color: #40a070; } 
-code span.er { color: #ff0000; font-weight: bold; } 
-code span.ex { } 
-code span.fl { color: #40a070; } 
-code span.fu { color: #06287e; } 
-code span.im { color: #008000; font-weight: bold; } 
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
-code span.kw { color: #007020; font-weight: bold; } 
-code span.op { color: #666666; } 
-code span.ot { color: #007020; } 
-code span.pp { color: #bc7a00; } 
-code span.sc { color: #4070a0; } 
-code span.ss { color: #bb6688; } 
-code span.st { color: #4070a0; } 
-code span.va { color: #19177c; } 
-code span.vs { color: #4070a0; } 
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
-
-a.sourceLine {
-pointer-events: auto;
-}
-</style>
-<script>
-// apply pandoc div.sourceCode style to pre.sourceCode instead
-(function() {
-  var sheets = document.styleSheets;
-  for (var i = 0; i < sheets.length; i++) {
-    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
-    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
-      var rule = rules[j];
-      // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
-      var style = rule.style.cssText;
-      // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
-      // replace div.sourceCode by a pre.sourceCode rule
-      sheets[i].deleteRule(j);
-      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
-    }
-  }
-})();
-</script>
 
 
 
@@ -149,9 +58,9 @@ code span.ot { color: #007020; }
 
 <header>
 <div class="inner">
-<h1 class="title toc-ignore">Assignment-6</h1>
+<h1 class="title toc-ignore">Weekly-Assignment-3</h1>
 <h3 class="author">Chris Fink</h3>
-<h3 class="date">2023-01-23</h3>
+<h3 class="date">2023-01-26</h3>
 </div>
 </header>
 
@@ -160,89 +69,7 @@ code span.ot { color: #007020; }
 <div id="content-wrapper">
   <div class="inner clearfix">
     <section id="main-content">
-<p>R Chunk For The Assignment</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
-<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
-## ✔ ggplot2 3.4.0      ✔ purrr   1.0.1 
-## ✔ tibble  3.1.8      ✔ dplyr   1.0.10
-## ✔ tidyr   1.2.1      ✔ stringr 1.5.0 
-## ✔ readr   2.1.3      ✔ forcats 0.5.2 
-## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-## ✖ dplyr::filter() masks stats::filter()
-## ✖ dplyr::lag()    masks stats::lag()</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 1</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(iris)</span></code></pre></div>
-<pre><code>## Rows: 150
-## Columns: 5
-## $ Sepal.Length &lt;dbl&gt; 5.1, 4.9, 4.7, 4.6, 5.0, 5.4, 4.6, 5.0, 4.4, 4.9, 5.4, 4.…
-## $ Sepal.Width  &lt;dbl&gt; 3.5, 3.0, 3.2, 3.1, 3.6, 3.9, 3.4, 3.4, 2.9, 3.1, 3.7, 3.…
-## $ Petal.Length &lt;dbl&gt; 1.4, 1.4, 1.3, 1.5, 1.4, 1.7, 1.4, 1.5, 1.4, 1.5, 1.5, 1.…
-## $ Petal.Width  &lt;dbl&gt; 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.3, 0.2, 0.2, 0.1, 0.2, 0.…
-## $ Species      &lt;fct&gt; setosa, setosa, setosa, setosa, setosa, setosa, setosa, s…</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">### There are 150 observations and 5 variables in this data set.</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 2</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>iris1 <span class="ot">&lt;-</span> <span class="fu">filter</span>(iris, Species <span class="sc">==</span> <span class="st">&quot;virginica&quot;</span> <span class="sc">|</span> Species <span class="sc">==</span> <span class="st">&quot;versicolor&quot;</span>, Sepal.Length <span class="sc">&gt;</span> <span class="dv">6</span> <span class="sc">&amp;</span> Sepal.Width <span class="sc">&gt;</span> <span class="fl">2.5</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(iris1)</span></code></pre></div>
-<pre><code>## Rows: 56
-## Columns: 5
-## $ Sepal.Length &lt;dbl&gt; 7.0, 6.4, 6.9, 6.5, 6.3, 6.6, 6.1, 6.7, 6.1, 6.1, 6.4, 6.…
-## $ Sepal.Width  &lt;dbl&gt; 3.2, 3.2, 3.1, 2.8, 3.3, 2.9, 2.9, 3.1, 2.8, 2.8, 2.9, 3.…
-## $ Petal.Length &lt;dbl&gt; 4.7, 4.5, 4.9, 4.6, 4.7, 4.6, 4.7, 4.4, 4.0, 4.7, 4.3, 4.…
-## $ Petal.Width  &lt;dbl&gt; 1.4, 1.5, 1.5, 1.5, 1.6, 1.3, 1.4, 1.4, 1.3, 1.2, 1.3, 1.…
-## $ Species      &lt;fct&gt; versicolor, versicolor, versicolor, versicolor, versicolo…</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">### There are 56 observation and 5 variables in this data set.</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 3</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>iris2 <span class="ot">&lt;-</span> <span class="fu">select</span>(iris1, Species, Sepal.Length, Sepal.Width)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(iris2)</span></code></pre></div>
-<pre><code>## Rows: 56
-## Columns: 3
-## $ Species      &lt;fct&gt; versicolor, versicolor, versicolor, versicolor, versicolo…
-## $ Sepal.Length &lt;dbl&gt; 7.0, 6.4, 6.9, 6.5, 6.3, 6.6, 6.1, 6.7, 6.1, 6.1, 6.4, 6.…
-## $ Sepal.Width  &lt;dbl&gt; 3.2, 3.2, 3.1, 2.8, 3.3, 2.9, 2.9, 3.1, 2.8, 2.8, 2.9, 3.…</code></pre>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="do">### There are 56 observations and 3 variables in this data set.</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 4</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>iris3 <span class="ot">&lt;-</span> <span class="fu">arrange</span>(iris2, <span class="at">by =</span> <span class="fu">desc</span>(Sepal.Length))</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris3)</span></code></pre></div>
-<pre><code>##     Species Sepal.Length Sepal.Width
-## 1 virginica          7.9         3.8
-## 2 virginica          7.7         3.8
-## 3 virginica          7.7         2.6
-## 4 virginica          7.7         2.8
-## 5 virginica          7.7         3.0
-## 6 virginica          7.6         3.0</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 5</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>iris4 <span class="ot">&lt;-</span> <span class="fu">mutate</span>(iris3, <span class="at">Sepal_Area =</span> Sepal.Length <span class="sc">*</span> Sepal.Width)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># There are 56 observations and 4 variables in this data set.</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 6</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>irisTab <span class="ot">&lt;-</span> <span class="fu">summarize</span>(iris4, <span class="at">Average.Sepal.Length =</span> <span class="fu">mean</span>(Sepal.Length), <span class="at">Average.Sepal.Width =</span> <span class="fu">mean</span>(Sepal.Width), <span class="at">TotalNumber =</span> <span class="fu">n</span>())</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(irisTab)</span></code></pre></div>
-<pre><code>##   Average.Sepal.Length Average.Sepal.Width TotalNumber
-## 1             6.698214            3.041071          56</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 7</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>grouped <span class="ot">&lt;-</span> <span class="fu">group_by</span>(iris4, Species)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>iris5 <span class="ot">&lt;-</span> <span class="fu">summarise</span>(grouped, <span class="at">Average.Sepal.Length =</span> <span class="fu">mean</span>(Sepal.Length), <span class="at">Average.Sepal.Width =</span> <span class="fu">mean</span>(Sepal.Width), <span class="at">TotalNumber =</span> <span class="fu">n</span>())</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(iris5)</span></code></pre></div>
-<pre><code>## # A tibble: 2 × 4
-##   Species    Average.Sepal.Length Average.Sepal.Width TotalNumber
-##   &lt;fct&gt;                     &lt;dbl&gt;               &lt;dbl&gt;       &lt;int&gt;
-## 1 versicolor                 6.48                2.99          17
-## 2 virginica                  6.79                3.06          39</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 8</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>irisFinal <span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Species <span class="sc">==</span> <span class="st">&quot;virginica&quot;</span> <span class="sc">|</span> Species <span class="sc">==</span> <span class="st">&quot;versicolor&quot;</span>, Sepal.Length <span class="sc">&gt;</span> <span class="dv">6</span> <span class="sc">&amp;</span> Sepal.Width <span class="sc">&gt;</span> <span class="fl">2.5</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Species, Sepal.Length, Sepal.Width) <span class="sc">%&gt;%</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="at">by =</span> <span class="fu">desc</span>(Sepal.Length)) <span class="sc">%&gt;%</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Sepal_Area =</span> Sepal.Length <span class="sc">*</span> Sepal.Width) <span class="sc">%&gt;%</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Average.Sepal.Length =</span> <span class="fu">mean</span>(Sepal.Length), <span class="at">Average.Sepal.Width =</span> <span class="fu">mean</span>(Sepal.Width), <span class="at">TotalNumber =</span> <span class="fu">n</span>())</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(irisFinal)</span></code></pre></div>
-<pre><code>##   Average.Sepal.Length Average.Sepal.Width TotalNumber
-## 1             6.698214            3.041071          56</code></pre>
+
     </section>
   </div>
 </div>

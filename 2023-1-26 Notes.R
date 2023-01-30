@@ -50,3 +50,34 @@ fish_encounters %>%
 
 ## read.table()
 dryadData <- read.table(file = "Data/veysey-powell-and-babbitt_data_buffers-and-amphibians2.csv", header=T, sep = ",")
+glimpse(dryadData)
+head(dryadData)
+
+table(dryadData$species)
+summary(dryadData$mean.hydro)
+
+
+
+
+dryadData$species<-factor(dryadData$species, labels=c("Spotted Salamander", "Wood Frog")) #creating 'labels' to use for the plot
+
+class(dryadData$treatment)
+
+dryadData$treatment <- factor(dryadData$treatment, 
+                              levels=c("Reference",
+                                       "100m", "30m"))
+
+
+p<- ggplot(data=dryadData, 
+           aes(x=interaction(wetland, treatment), 
+               y=count.total.adults, fill=factor(year))) + geom_bar(position="dodge", stat="identity", color="black") +
+  ylab("Number of breeding adults") +
+  xlab("") +
+  scale_y_continuous(breaks = c(0,100,200,300,400,500)) +
+  scale_x_discrete(labels=c("30 (Ref)", "124 (Ref)", "141 (Ref)", "25 (100m)","39 (100m)","55 (100m)","129 (100m)", "7 (30m)","19 (30m)","20 (30m)","59 (30m)")) +
+  facet_wrap(~species, nrow=2, strip.position="right") +
+  theme_few() + scale_fill_grey() + 
+  theme(panel.background = element_rect(fill = 'gray94', color = 'black'), legend.position="top",  legend.title= element_blank(), axis.title.y = element_text(size=12, face="bold", colour = "black"), strip.text.y = element_text(size = 10, face="bold", colour = "black")) + 
+  guides(fill=guide_legend(nrow=1,byrow=TRUE))
+
+p

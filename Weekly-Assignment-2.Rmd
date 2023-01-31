@@ -10,7 +10,7 @@ output:
 
 
 ```{r}
-## Quesstion 1
+## Question 1
 my_unif <- rep(NA, 26)
 my_letters <- rep(NA, 26)
 dFrame <- data.frame(my_unif, my_letters, stringAsFactors=F)

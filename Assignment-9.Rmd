@@ -7,3 +7,67 @@ output:
     theme: architect
     highlight: github
 ---
+
+R Chunk For Assignment 9
+```{r}
+## Question 1
+test <- c(0, 0, 0, 1, 1, 1)
+numzero <- function(vec = NULL){
+  counter <- 0 
+  for(i in 1:length(vec)){
+    if(vec[i] == 0){
+      counter <- counter + 1
+    }
+  }
+  return(counter)
+}
+numzero(test)
+
+# Question 2
+
+colrow <- function(numcol = NULL, numrow = NULL){
+  m = matrix(rep(0, each = numcol * numrow ), nrow = numrow, ncol = numcol)
+  for(i in 1:nrow(m)){
+    for(j in 1:ncol(m)){
+      m[i,j] <- (i * j)
+    }
+  }
+  return(m)
+}
+
+colrow(2, 6)
+
+# Question 3
+
+# Copy of functions from weekly assignment 2
+my_unif <- rep(NA, 26)
+my_letters <- rep(NA, 26)
+dFrame <- data.frame(my_unif, my_letters, stringAsFactors=F)
+dFrame
+
+myFunc <- function(mean1=10, mean2=45){
+  Dframe <- data.frame(Type = rep(NA, 50), Value = rep(NA, 50))
+  Dframe[1:25, 1] <- "Control"
+  Dframe[26:50, 1] <- "Treatment"
+  Dframe[1:25, 2] <- rnorm(n=25, mean = mean1, sd = 1.5)
+  Dframe[26:50, 2] <- rnorm(n = 25, mean =mean2, sd = 2)
+  return(Dframe)
+}
+
+pVal <- function(Dframe = NULL){
+  anova <- aov(as.formula(paste(names(Dframe)[2], "~", names(Dframe)[1])), data = Dframe)
+  return(summary(anova)[[1]][[1, "Pr(>F)"]])
+}
+
+pVal(myFunc(mean1 = 14, mean2 = 73))
+
+dFrame <- data.frame(pval = rep(NA, each = 100), repNum = rep(NA, each = 100))
+for (i in 1:100){
+  dFrame [i,1] <- pVal (myFunc())
+  dFrame [i,2] <- i 
+  }
+print (dFrame)
+# for loop manipulation
+
+```
+

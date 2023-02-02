@@ -1,0 +1,114 @@
+---
+title: "Packages not Covered in Class"
+author: "Chris Fink"
+date: "2023-01-30"
+output:
+  prettydoc::html_pretty:
+    theme: architect
+    highlight: github
+---
+
+In this assignment, I will cover a few packages (mainly gt) used in R that we had not used in class. I chose this as my topic because I was looking for new and interesting ways to incorporate the knowledge of this class into future reports. Upon looking up the different packages we did not learn in class, I found that the gt created graphs have a very high level of customization. 
+
+## Using gt 
+
+gt is a package that focuses mainly on the improved look of tables produced by r. It is helpful to make tables easy to read and access for the understanding of the material. It is important to reproducible biology because it allows a better way of passing on information to your peers.
+
+```{r}
+library(gt)
+library(tidyverse)
+
+
+sw <- starwars[complete.cases(starwars[, 1:10]),]
+
+
+sw1 <- sw %>% 
+  select(name, height) %>% 
+  arrange(desc(height))
+
+# With sw1, I will now make a very simple table using gt
+
+gt_sw1 <- gt(sw1)
+gt_sw1
+
+# This is the most basic form of a tbale that can be creeated using gt.
+# Now it is time to customize it more.
+
+# Headers
+gt_sw1 <- gt_sw1 %>%
+  tab_header(
+    title = "The Heights of Different Characters",
+    subtitle = "NAs have been removed"
+  )
+gt_sw1
+
+# Next we can add text under the table using source note.
+
+gt_sw1 <- gt_sw1 %>%
+  tab_source_note(source_note = "This data has been obtained from the tidyverse")
+gt_sw1
+
+# This could allow you to site the data of a table for a report.
+# We can also add sub groups in the table to separate data.
+
+gt_sw1 <- gt_sw1 %>%
+  tab_row_group(
+    label = "Taller",
+    rows = 1:15
+  ) %>%
+  tab_row_group(
+    label = "Shorter",
+    rows = 16:29
+  )
+gt_sw1
+
+# Now that the data is split up
+# We can add footnotes to expand on our ability to cite materials
+
+gt_sw2 <- gt_sw1 %>%
+   tab_footnote(
+    footnote = "Characters",
+    locations = cells_body(columns = name, rows = everything())
+  )
+  
+gt_sw2
+
+
+# Now it is time to look at it all put together
+
+sw3 <- sw %>%
+  select(name, height, mass, hair_color, eye_color)
+
+gtsw3 <- gt(sw3)
+
+gtsw3
+
+gtsw3 <- gtsw3 %>%
+  tab_header(
+    title = "Star Wars Characters",
+    subtitle = "Physical Traits Compared"
+  ) %>%
+  tab_source_note(source_note = "This data has been obtained from the tidyverse") %>%
+  tab_row_group(
+    label = "Section 3",
+    rows = 21:29
+  ) %>% 
+  tab_row_group(
+    label = "Section 2",
+    rows = 11:20
+  ) %>% 
+  tab_row_group(
+    label = "Section 1",
+    rows = 1:10
+  ) %>%
+  tab_footnote(
+    footnote = "Characters",
+    locations = cells_body(columns = name, rows = everything())
+  )
+
+gtsw3
+```
+
+![](https://gt.rstudio.com/reference/figures/gt_parts_of_a_table.svg)
+
+![](http://www.danieldsjoberg.com/gt-and-gtsummary-presentation/images/tbl_regression_4.png)

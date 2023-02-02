@@ -1,0 +1,63 @@
+---
+title: "Weekly-Assignment-4"
+author: "Chris Fink"
+date: "2023-01-31"
+output:
+  prettydoc::html_pretty:
+    theme: architect
+    highlight: github
+---
+
+For this assignment I will be using the wolf data that was used in weekly assignment 3.
+
+```{r}
+library(tidyverse)
+library(ggthemes)
+library(ggplot2)
+library(dplyr)
+
+wolfData <- read.table(file="Data/RW_Dataset.csv", header=T, sep = ",")
+wolfData
+wolfModel <- wolfData %>%
+  filter(fate != "agency_removal", fate != "fu", fate != "unknown", fate != "legal", fate != "nonhuman") %>%
+  as.double(age_at_death_year) %>% 
+  filter(age_at_death_year != "UNKNOWN", age_at_death_year != "UNKOWN", age_at_death_year != "unknown", age_at_death_year != "UNKONWN") %>% 
+  select(cause_death, age_at_death_year)
+  
+
+WolfModelC <- wolfData %>%
+  select(collision, age_at_death_year) %>%
+  filter(age_at_death_year != "UNKNOWN", age_at_death_year != "UNKOWN", age_at_death_year != "unknown", age_at_death_year != "UNKONWN") %>%
+  filter(collision == 1) %>%
+  mutate(WolfModelC, mean.death = mean(age_at_death_year)) %>%
+  mutate(WolfModelC, Count = n()) %>%
+  mutate(WolfModelC, sd.death = sd(age_at_death_year))
+
+
+WolfModelP <- wolfData %>%
+  select(poached, age_at_death_year) %>%
+  filter(age_at_death_year != "UNKNOWN", age_at_death_year != "UNKOWN", age_at_death_year != "unknown", age_at_death_year != "UNKONWN") %>%
+  filter(poached == 1) %>%
+  mutate(WolfModelP, mean.death = mean(age_at_death_year)) %>%
+  mutate(WolfModelP, Count = n()) %>%
+  mutate(WolfModelP, sd.death = sd(age_at_death_year))
+
+
+
+ANOmodel <- aov(age_at_death_year~factor(cause_death),data=wolfModel)
+print(ANOmodel)
+summary(ANOmodel)
+
+
+ANOPlot <- ggplot(data=wolfModel, aes(x=cause_death,y=age_at_death_year)) +
+  geom_boxplot() + 
+  xlab("Cause of Death") + 
+  ylab("Age at Death") + 
+  scale_y_discrete(breaks = c(0, 2, 4, 6, 8, 10, 12, 14))
+
+          
+  
+ANOPlot
+  
+```
+

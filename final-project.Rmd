@@ -1,5 +1,5 @@
 ---
-title: "Packages not Covered in Class"
+title: "Package not Covered in Class"
 author: "Chris Fink"
 date: "2023-01-30"
 output:
@@ -8,7 +8,7 @@ output:
     highlight: github
 ---
 
-In this assignment, I will cover a few packages (mainly gt) used in R that we had not used in class. I chose this as my topic because I was looking for new and interesting ways to incorporate the knowledge of this class into future reports. Upon looking up the different packages we did not learn in class, I found that the gt created graphs have a very high level of customization. 
+In this assignment, I will cover a package (gt) used in R that we had not used in class. I chose this as my topic because I was looking for new and interesting ways to incorporate the knowledge of this class into future reports. Upon looking up the different packages we did not learn in class, I found that the gt created graphs have a very high level of customization. 
 
 ## Using gt 
 
@@ -31,7 +31,7 @@ sw1 <- sw %>%
 gt_sw1 <- gt(sw1)
 gt_sw1
 
-# This is the most basic form of a tbale that can be creeated using gt.
+# This is the most basic form of a table that can be created using gt.
 # Now it is time to customize it more.
 
 # Headers

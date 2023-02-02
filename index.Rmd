@@ -42,3 +42,8 @@ I am Chris FInk and I would like to welcome you to my github page for the BIO 10
 [Weekly Assignment 3](Weekly-Assignment-3.html)
 
 [Weekly Assignment 4](Weekly-Assignment-4.html)
+
+## Final Project
+
+[Packages not Covered in Class](final-project.html)
+
